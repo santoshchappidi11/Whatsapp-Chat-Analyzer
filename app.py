@@ -5,12 +5,12 @@ import helper
 import matplotlib.pyplot as plt
 import emoji
 import pandas as pd
+import pickle
 # import seaborn as sns
 # import plotly.express as px
 # from collections.abc import Iterable
 # from nltk.sentiment.vader import SentimentIntensityAnalyzer
 # from sklearn.feature_extraction.text import CountVectorizer
-import pickle
 # from sklearn.feature_extraction.text import TfidfVectorizer
 
 # cv = TfidfVectorizer()

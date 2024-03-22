@@ -19,11 +19,6 @@ with open('svm_model.pkl', 'rb') as f:
     model, vectorizer = pickle.load(f)
 
 
-# with open('svm_model.pkl', 'rb') as f:
-#     vectorizer = pickle.load(f)
-
-
-
 st.set_page_config(page_title="santosh", layout="wide")
 st.title("WhatsChatAnalyze🔎")
 st.write("*Made by Santosh!👨🏻‍💻*")
@@ -35,7 +30,7 @@ if uploadedFile is not None:
     dataFrame = preprocessor.preprocess(finalData)
     #st.dataframe(dataFrame.head())
 
-    # fetch unique users
+    # fetch unique users---------------------------------------------------->
     userList = dataFrame["user"].unique().tolist()
     if ("default" in userList):
         userList.remove("default")

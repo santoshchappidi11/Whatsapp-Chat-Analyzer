@@ -1,14 +1,14 @@
 import numpy as np
 import pandas as pd
-from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import MultinomialNB
-from nltk.tokenize import word_tokenize
-from nltk.stem import PorterStemmer
-from nltk.corpus import stopwords
-import string
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import SVC
+# from sklearn.naive_bayes import MultinomialNB
+# from sklearn.feature_extraction.text import CountVectorizer
+# from nltk.corpus import stopwords
+# import string
+# from nltk.tokenize import word_tokenize
+# from nltk.stem import PorterStemmer
 
 # Load your dataset
 data = pd.read_csv('modified_train_df.csv')
@@ -53,7 +53,7 @@ X_test_tfidf = vectorizer.transform(X_test_preprocessed)
 model = SVC(kernel='linear')
 model.fit(X_train_tfidf, y_train)
 
-# Now the model is trained, you can save it using pickle
+# model is trained, save it using pickle
 import pickle
 
 # Save the trained model to pickle

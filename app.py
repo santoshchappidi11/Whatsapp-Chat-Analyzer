@@ -20,7 +20,7 @@ with open('svm_model.pkl', 'rb') as f:
 
 
 st.set_page_config(page_title="santosh", layout="wide")
-st.title("WhatsChatAnalyze🔎")
+st.title("WhatsappChatAnalyze🔎")
 st.write("*Made by Santosh!👨🏻‍💻*")
 st.sidebar.title("WhatsApp Chat Analyzer with Sentiment Analysis")
 uploadedFile = st.sidebar.file_uploader("Choose a File🗃️")

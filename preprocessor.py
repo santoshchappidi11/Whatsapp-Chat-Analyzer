@@ -4,20 +4,20 @@ import pandas as pd
 
 def preprocess(data):
     
-    pattern = '\d{2}\/\d{2}\/\d{2}, \d{1,2}:\d{2}\s(?:am|pm) - '
-    regex = r'\d{2}/\d{2}/\d{4}, \d{1,2}:\d{2}\s*[ap]m'
-    regexN = r'\d{1,2}\/\d{1,2}\/\d{2},\s\d{1,2}:\d{2}\s[AP]M'
+    pattern1 = '\d{2}\/\d{2}\/\d{2}, \d{1,2}:\d{2}\s(?:am|pm) - '
+    pattern2 = r'\d{2}/\d{2}/\d{4}, \d{1,2}:\d{2}\s*[ap]m'
+    pattern3 = r'\d{1,2}\/\d{1,2}\/\d{2},\s\d{1,2}:\d{2}\s[AP]M'
 
-    dates1 = re.findall(regex, data)
-    dates2 = re.findall(pattern, data)
-    dates3 = re.findall(regexN, data)
+    dates1 = re.findall(pattern2, data)
+    dates2 = re.findall(pattern1, data)
+    dates3 = re.findall(pattern3, data)
 
-    regex = r'\d{2}/\d{2}/\d{4}, \d{1,2}:\d{2}\s*[ap]m - '
-    regexN = r'\d{1,2}\/\d{1,2}\/\d{2},\s\d{1,2}:\d{2}\s[AP]M\s-\s'
+    # pattern2 = r'\d{2}/\d{2}/\d{4}, \d{1,2}:\d{2}\s*[ap]m - '
+    # pattern3 = r'\d{1,2}\/\d{1,2}\/\d{2},\s\d{1,2}:\d{2}\s[AP]M\s-\s'
 
-    messages1 = re.split(regex, data)[1:]
-    messages2 = re.split(pattern, data)[1:]
-    messages3 = re.split(regexN, data)[1:]
+    messages1 = re.split(pattern2, data)[1:]
+    messages2 = re.split(pattern1, data)[1:]
+    messages3 = re.split(pattern3, data)[1:]
     
     holdsZero = [0, len(dates1), len(dates2), len(dates3)]
     dates = dates2

@@ -83,7 +83,7 @@ if uploadedFile is not None:
         plt.ylabel('Message Count', color='white')
         st.pyplot(plt)
 
-        # activity map----------------------------------------------------------->
+        # Week Activity----------------------------------------------------------->
         st.title("Week Activity📊")
         col1, col2 = st.columns(2)
         weekActivitySeries, weekActivity = helper.weekActivity(selectedUser, dataFrame)
